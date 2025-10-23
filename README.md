@@ -25,7 +25,16 @@ Construire un modèle DNN simple pour classer des images de vêtements (Fashion 
 - Époques : 15
 - Validation : 20%
 - Callback : EarlyStopping
+## Visualisation des performances
+Deux graphiques ont été tracés pour suivre l’évolution du modèle pendant l’entraînement :
+    Courbe de précision : montre l’évolution de la précision sur les données d’entraînement et de validation à chaque époque. Cela permet de vérifier si le modèle apprend correctement et s’il généralise bien.
+    Courbe de perte : indique la diminution de l’erreur (loss) au fil des époques. Une perte qui diminue régulièrement est signe d’un bon apprentissage.
+Ces visualisations aident à détecter un éventuel surentraînement (overfitting) ou sous-apprentissage.
 ##  Fonction de perte
-`sparse_categorical_crossentropy` est adaptée aux labels entiers, contrairement à `categorical_crossentropy` qui nécessite un encodage one-hot.
+ Choix de la fonction de perte :
+  -sparse_categorical_crossentropy est utilisée lorsque les labels sont des entiers (ex. : 0, 1, 2…). Elle est simple à implémenter et évite de transformer les labels.
+  -categorical_crossentropy est utilisée quand les labels sont encodés en one-hot (ex. : [0, 0, 1, 0, 0…]). Elle nécessite une étape de prétraitement supplémentaire.
+
+Dans ce projet, les labels sont déjà sous forme d’entiers, donc sparse_categorical_crossentropy est le choix le plus adapté.
 ##  Conclusion
 Le modèle répond aux exigences du brief : il est simple, reproductible, performant (>80%) et constitue une base solide pour des modèles plus avancés.
