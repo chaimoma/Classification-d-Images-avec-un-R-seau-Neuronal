@@ -15,7 +15,8 @@ Construire un modèle DNN simple pour classer des images de vêtements (Fashion 
 - Callback EarlyStopping pour éviter le surentraînement
 - Sauvegarde du modèle
 ##  Résultats
-- Précision validation : ~86%
+- Précision test : 87.91%
+- Perte test : 0.3471
 - Visualisation des courbes de précision et de perte avec Matplotlib
 ##  Hyperparamètres
 - Neurones : 128
